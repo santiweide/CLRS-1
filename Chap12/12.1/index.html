@@ -5833,9 +5833,12 @@
 <blockquote>
 <p>What is the difference between the binary-search-tree property and the min-heap property (see page 153)? Can the min-heap property be used to print out the keys of an $n$-node tree in sorted order in $O(n)$ time? Show how, or explain why not.</p>
 </blockquote>
-<p>In a heap, a node's key is $\ge$ both of its children's keys. In a binary search tree, a node's key is $\ge$ its left child's key, but $\le$ its right child's key.</p>
-<p>The heap property, unlike the binary-searth-tree property, doesn't help print the nodes in sorted order because it doesn't tell which subtree of a node contains the element to print before that node. In a heap, the largest element smaller than the node could be in either subtree.</p>
-<p>Note that if the heap property could be used to print the keys in sorted order in $O(n)$ time, we would have an $O(n)$-time algorithm for sorting, because building the heap takes only $O(n)$ time. But we know (Chapter 8) that a comparison sort must take $\Omega(n\lg n)$ time.</p>
+<ul>
+<li>In a min-heap, a node's key is $\le$ both of its children's keys.</li>
+<li>In a binary-search-tree, a node's key is $\ge$ its left child's key, but $\le$ its right child's key.</li>
+</ul>
+<p>The min-heap property, unlike the binary-searth-tree property, doesn't help print the nodes in sorted order because it doesn't tell which subtree of a node contains the element to print after that node. In a min-heap, the smallest element larger than the node could be in either subtree.</p>
+<p>Note that if the min-heap property could be used to print the keys in sorted order in $O(n)$ time, we would have an $O(n)$-time algorithm for sorting, because building the heap takes only $O(n)$ time. But we know (Chapter 8) that a comparison sort must take $\Omega(n\lg n)$ time.</p>
 <h2 id="121-3">12.1-3</h2>
 <blockquote>
 <p>Give a nonrecursive algorithm that performs an inorder tree walk. ($\textit{Hint:}$ An easy solution uses a stack as an auxiliary data structure. A more complicated, but elegant, solution uses no stack but assumes that we can test two pointers for equality.)</p>
