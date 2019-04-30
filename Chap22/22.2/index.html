@@ -5933,7 +5933,7 @@ d(a, b) + 2d(s, c) &amp; = d(s, c) + d(c, b) + d(s, c) + d(c, a) \\
                    &amp; &lt; d(s, x) + d(s, c) + d(c, b).
 \end{aligned}
 $$</p>
-<p>I claim that $d(x, b) = d(s, c) + d(s, b)$. If not, then by the triangle inequality we must have a strict less-than. In other words, there is some path from $x$ to $b$ which does not go through $c$. This gives the contradiction, because it implies there is a cycle formed by concatenating these paths. Then we have</p>
+<p>I claim that $d(x, b) = d(s, x) + d(s, b)$. If not, then by the triangle inequality we must have a strict less-than. In other words, there is some path from $x$ to $b$ which does not go through $c$. This gives the contradiction, because it implies there is a cycle formed by concatenating these paths. Then we have</p>
 <p>$$d(a, b) &lt; d(a, b) + 2d(s, c) &lt; d(x, b).$$</p>
 <p>Since it is assumed that $d(a, b)$ is maximal among all pairs, we have a contradiction. Therefore, since trees have $|V| - 1$ edges, we can run $\text{BFS}$ a single time in $O(V)$ to obtain one of the vertices which is the endpoint of the longest simple path contained in the graph. Running $\text{BFS}$ again will show us where the other one is, so we can solve the diameter problem for trees in $O(V)$.</p>
 <h2 id="222-9">22.2-9</h2>
