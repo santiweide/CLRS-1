@@ -5817,7 +5817,17 @@
 <blockquote>
 <p>Professor Bündchen proposes the following heuristic to solve the vertex-cover problem. Repeatedly select a vertex of highest degree, and remove all of its incident edges. Give an example to show that the professor's heuristic does not have an approximation ratio of $2$. ($\textit{Hint:}$ Try a bipartite graph with vertices of uniform degree on the left and vertices of varying degree on the right.)</p>
 </blockquote>
-<p>(Omit!)</p>
+<p>Consider a bibartite graph with left part $L$ and right part $R$ such that $L$ has $5$ vertices of degrees $(5, 5, 5, 5, 5)$ and $R$ has $11$ vertices of degrees $(5, 4, 4, 3, 2, 2, 1, 1, 1, 1, 1)$ (the graph is easy to draw and the figure is omitted here).</p>
+<p>Clearly there exists a vertex-cover of size $5$ (the left vertices). The idea is to show that the proposed algorithm chooses all the vertices on the right part, resulting in the approximation ratio of $11 / 5 &gt; 2$.</p>
+<ol>
+<li>After choosing the first vertex in $R$, the degrees on $L$ decrease to $(4, 4, 4, 4, 4)$.</li>
+<li>After choosing the second vertex in $R$, the degrees on $L$ decrease to $(4, 3, 3, 3, 3)$.</li>
+<li>After choosing the third vertex in $R$, the degrees on $L$ decrease to $(3, 3, 2, 2, 2)$.</li>
+<li>After choosing the fourth vertex in $R$, the degrees on $L$ decrease to $(2, 2, 2, 2, 1)$.</li>
+<li>After choosing the fifth vertex in $R$, the degrees on $L$ decrease to $(2, 2, 1, 1, 1)$.</li>
+<li>After choosing the sixth vertex in $R$, the degrees on $L$ decrease to $(1, 1, 1, 1, 1)$.</li>
+</ol>
+<p>Now the algorithm still has to choose $5$ more vertices.</p>
 <h2 id="351-4">35.1-4</h2>
 <blockquote>
 <p>Give an efficient greedy algorithm that finds an optimal vertex cover for a tree in linear time.</p>
